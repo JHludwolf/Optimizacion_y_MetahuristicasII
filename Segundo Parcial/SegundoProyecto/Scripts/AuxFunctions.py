@@ -18,15 +18,18 @@ def show_image(img_arr):
     plt.imshow(img_arr / 255)
     plt.show()
 
-def show_fitness(target, specie):
+def show_fitness(target, species):
     plt.figure(figsize=(10,5))
     plt.axis("off")
-    plt.subplot(1,2,1)
+
+    plt.subplot(1, len(species), 1)
     plt.title("Target Image")
     plt.imshow(target / 255)
-    plt.subplot(1,2,2)
-    plt.title("Circle Approximation")
-    plt.imshow(specie / 255)
+
+    for i, specie in enumerate(species):
+        plt.subplot(1, len(species), i+2)
+        plt.title(str(specie[1]) + " Iter Circle Approx")
+        plt.imshow(specie[0] / 255)
     plt.show()
 
 def add_circle(phenotype, gene):
@@ -47,3 +50,6 @@ def add_circle(phenotype, gene):
     phenotype = cv2.addWeighted(overlay, alpha, phenotype, 1 - alpha, 0)
     
     return phenotype
+
+def filename_from_path(path):
+    return path.split('/')[-1].split('.')[0]

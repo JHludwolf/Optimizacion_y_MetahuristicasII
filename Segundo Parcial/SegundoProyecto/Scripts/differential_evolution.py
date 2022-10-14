@@ -73,7 +73,7 @@ class DifferentialEvolution:
             
             if self.callback:
                 best_value_idx = np.argmin(self.fitness)
-                self.callback(self.population[best_value_idx])
+                self.callback(self.population[best_value_idx], g)
         
         best_value_idx = np.argmin(self.fitness)
         return self.population[best_value_idx], self.fitness[best_value_idx]

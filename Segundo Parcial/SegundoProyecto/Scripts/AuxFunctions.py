@@ -1,4 +1,5 @@
 import cv2
+import imageio
 import numpy as np
 import matplotlib.pyplot as plt
 from IPython.display import clear_output
@@ -59,3 +60,9 @@ def add_circle(phenotype, gene):
 
 def filename_from_path(path):
     return path.split('/')[-1].split('.')[0]
+
+def save_dir_to_GIF(dir, ):
+    images = []
+    for filename in filenames:
+        images.append(imageio.imread(filename))
+    imageio.mimsave(dir + '/' + 'movie.gif', images)

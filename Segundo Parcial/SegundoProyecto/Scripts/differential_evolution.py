@@ -36,6 +36,7 @@ class DifferentialEvolution:
 
     def print_progress(self, g):
         clear_output(wait=True)
+        print("DIFFERENTIAL EVOLUTION, {} GENS, {} POPULATION, {} GENES".format(self.niter, self.popsize, self.genes))
         print("GEN {}, FIT {:.8f}".format(g, np.mean(self.fitness)))
 
     def mutation(self):

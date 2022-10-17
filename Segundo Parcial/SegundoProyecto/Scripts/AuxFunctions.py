@@ -66,3 +66,35 @@ def save_dir_to_GIF(dir, ):
     for filename in filenames:
         images.append(imageio.imread(filename))
     imageio.mimsave(dir + '/' + 'movie.gif', images)
+
+'''import imageio
+
+dir = '../Images/Outputs/arbol/'
+filenames = sorted(os.listdir('../Images/Outputs/space_cruiser/'))
+
+images = []
+for filename in filenames:
+    images.append(imageio.imread(dir + filename))
+for _ in range(10):
+    images.append(imageio.imread(dir + filenames[-1]))
+    
+imageio.mimsave('../Images/Outputs/' + 'space_cruiser.gif', images)'''
+
+'''
+    clear_output(wait=True)
+    dir = '../Images/Outputs/' + filename_from_path(path) + '/'
+    exists = os.path.exists(dir)
+
+    if not exists:
+        os.makedirs(dir)
+    n = str(g) if g >= 10 else '0' + str(g)
+    name = dir + filename_from_path(path) + '_gen_' + n + '.png'
+
+    plt.figure(figsize=(5,5))
+    plt.axis("off")
+    #plt.imsave(name, phenotype / 255)
+    plt.imshow(phenotype / 255)
+    plt.savefig(name)
+    '''
+    
+    #'../Images/Outputs/' + filename_from_path(path) + '_circle_approx.png'
